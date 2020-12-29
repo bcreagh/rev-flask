@@ -1,0 +1,2 @@
+service: flask-service
+runtime: python39
