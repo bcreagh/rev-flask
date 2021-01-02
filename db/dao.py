@@ -123,5 +123,5 @@ def connect():
         ).fetchall()
         # Convert the results into a list of dicts representing votes
         for row in raw_reviews:
-            reviews.append("reviewId: " + row[0] + ", rating: " + row[1])
+            reviews.append("reviewId: " + str(row[0]) + ", rating: " + str(row[1]))
     return reviews
