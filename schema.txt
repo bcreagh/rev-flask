@@ -1,0 +1,32 @@
+# Instance name: reviews-db
+# Database name: reviewsdb
+
+CREATE TABLE Reviews (
+    reviewId INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255),
+    content VARCHAR(6000),
+    hiddenContent VARCHAR(6000),
+    rating INT,
+    PRIMARY KEY(reviewId)
+);
+
+CREATE TABLE Labels (
+    labelId INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255),
+    reviewId INT,
+    PRIMARY KEY(labelId),
+    FOREIGN KEY (reviewId) REFERENCES Reviews(reviewId)
+);
+
+INSERT INTO Reviews (
+    title,
+    content,
+    hiddenContent,
+    rating
+)
+values (
+    "Pan's Labyrinth",
+    "Pan's Labyrinth follows the story of a girl (Ofelia) in Spain during Franco's power. It's set in 1944 during WWII. Her mother is reluctantly married to an army captain (Captain Vidal). This puts Ofelia in the middle of the struggle between the army and the rebels. In the midst of this, visited by fantasy creatures who want to bring her into a magical world, where she is promised she will be a princess.\nI really enjoyed this movie. Be warned though, for a fairytale it is very dark. It's really unique and really memorable. I can't count the number of shoot 'em up movies that I've watched that all merge into each other over time in my mind. It's refreshing to watch a movie that is truly not like anything I've seen before. I think even if you don't end up liking it, it would still be worth the 2 hour watch as it's something you won't forget. I also liked that I never really knew where the story was headed. It was unexpected right to the end.",
+    "The ending opens the question of whether the fairytale aspect was all in her head or not. I often don't like these kinds of endings, but I think in this case it works well. If it was all in her head, the ending was very dark - she dies, but her fantasy gives her comfort in the end. If it was real, then despite the darkness she is leaving behind (everyone believes she is dead), she has started a new, happy life.\nI suspect that it is supposed to be open ended, without a clear answer. If it was real, why couldn't Vidal see the faun? But if it was not real, how did Ofelia escape her room without the magic chalk to make a doorway?",
+    4
+);
