@@ -113,13 +113,15 @@ db = None
 
 
 def connect():
-    votes = []
+    reviews = []
+    global db
+    db = init_connection_engine()
     with db.connect() as conn:
         # Execute the query and fetch all results
-        recent_votes = conn.execute(
+        raw_reviews = conn.execute(
             "SELECT reviewId, rating FROM Reviews"
         ).fetchall()
         # Convert the results into a list of dicts representing votes
-        for row in recent_votes:
-            votes.append({"reviewId": row[0], "rating": row[1]})
-    return votes
+        for row in raw_reviews:
+            reviews.append("reviewId: " + row[0] + ", rating: " + row[1])
+    return reviews

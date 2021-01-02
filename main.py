@@ -15,8 +15,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     """Return a friendly HTTP greeting."""
-    db.dao.connect()
-    return 'Hello World!'
+    return db.dao.connect()[0]
 
 
 if __name__ == '__main__':

@@ -4,4 +4,4 @@ env_variables:
   CLOUD_SQL_CONNECTION_NAME: ibhopinion:europe-west2:reviews-db
   DB_USER: root
   DB_PASS: <PASS>
-  DB_NAME: reviews-db
+  DB_NAME: reviewsdb
